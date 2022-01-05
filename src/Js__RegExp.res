@@ -1,11 +1,15 @@
+// TODO: handle indices.
+// See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec
+
 type t = Js.Re.t
 
 module Result = {
-  type t = array<string>
+  type t = array<option<string>>
   @get_index external fullMatch: (t, @as(0) _) => string = ""
   @send external matches: (t, @as(1) _) => array<string> = "slice"
   @get external index: t => int = "index"
   @get external input: t => string = "input"
+  @get external groups: t => Dict.t<option<string>> = "groups"
 }
 
 @new external fromString: string => t = "RegExp"
