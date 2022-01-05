@@ -28,7 +28,7 @@
 @send external lastIndexOf: (string, string) => int = "lastIndexOf"
 @send external lastIndexOfFrom: (string, string, ~from: int) => int = "lastIndexOf"
 
-@send external match: (string, Js__RegExp.t) => null<Js__RegExp.Result.t> = "match"
+@send external match: (string, Js__RegExp.t) => Js.null<Js__RegExp.Result.t> = "match"
 @send external matchAll: (string, Js__RegExp.t) => Js__Iterator.t<Js__RegExp.Result.t> = "matchAll"
 
 type normalizeForm = [#NFC | #NFD | #NFKC | #NFKD]
