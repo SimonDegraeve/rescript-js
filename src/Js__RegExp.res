@@ -9,7 +9,7 @@ module Result = {
   @send external matches: (t, @as(1) _) => array<string> = "slice"
   @get external index: t => int = "index"
   @get external input: t => string = "input"
-  @get external groups: t => Dict.t<option<string>> = "groups"
+  @get external groups: t => {..} = "groups"
 }
 
 @new external fromString: string => t = "RegExp"
